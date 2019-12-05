@@ -25,7 +25,9 @@ const Instructor = ({ instructorName, imgUrl }) => (
 );
 
 const SessoionTime = ({ time }) => {
+  // Set start time format
   const startTime = moment(time, "HH:mm").format("h:mm");
+  // Set end time assuming 1h duration, and format
   const endTime = moment(time, "HH:mm")
     .add(1, "hours")
     .format("h:mm A z");
@@ -38,6 +40,7 @@ const Module = ({ moduleData }) => {
     <div className="module">
       <SubjectPhoto photoUrl={moduleData.subjectPhotoUrl} />
       <TitleDesc title={moduleData.title} desc={moduleData.description} />
+      {/* instructor time wrapper for responsive stacking of instructor info and session time */}
       <div className="instructor-time">
         <Instructor
           instructorName={moduleData.instructorName}

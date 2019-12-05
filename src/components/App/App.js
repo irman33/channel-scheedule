@@ -26,7 +26,7 @@ class App extends Component {
       module.time = time;
     });
 
-    // Create an array of dates
+    // Create an array of dates from data set
     let datesArray = [...new Set(schedule.map(obj => obj.date).sort())];
 
     this.setState({ isLoading: false, scheduleData: schedule, datesArray });
@@ -41,6 +41,7 @@ class App extends Component {
           <div className="loading">Loading...</div>
         ) : (
           <div className="app">
+            {/* Itarate over dates and render Day component for each */}
             {datesArray.map((date, i) => {
               const modules = scheduleData.filter(
                 module => module.date === date
