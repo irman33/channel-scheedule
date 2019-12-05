@@ -3,6 +3,8 @@
 The coding challange was completed using ReactJS, CSS.
 The only dependancy is moment.js for manipulating data and time formats.
 
+**In the sample data provided the image placeholder URLs were dead links so I took the liberty to adjust them using another image placeholder service. The updated data sample is called channel-fix.json
+
 
 ## Available Scripts
 
