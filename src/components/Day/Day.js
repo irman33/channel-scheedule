@@ -24,6 +24,9 @@ const Day = props => {
   );
 };
 
-Day.propTypes = {};
+Day.propTypes = {
+  date: PropTypes.string.isRequired,
+  modules: PropTypes.array.isRequired
+};
 
 export default Day;

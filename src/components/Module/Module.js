@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import moment from "moment";
 
 import "./Module.css";
-import { end } from "worker-farm";
 
 const SubjectPhoto = ({ photoUrl }) => (
   <div className="subject-photo">
@@ -50,6 +49,16 @@ const Module = ({ moduleData }) => {
   );
 };
 
-Module.propTypes = {};
+Module.propTypes = {
+  moduleData: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    instructorName: PropTypes.string.isRequired,
+    instructorPhotoUrl: PropTypes.string.isRequired,
+    subjectPhotoUrl: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })
+};
 
 export default Module;

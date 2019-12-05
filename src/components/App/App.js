@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import "./App.css";
 // import schedule from "../../channel.json";
@@ -32,13 +31,22 @@ class App extends Component {
 
   render() {
     const { daysSet, isLoading, scheduleData } = this.state;
+
     return (
-      <div className="app">
-        {daysSet.map((date, i) => {
-          const modules = scheduleData.filter(module => module.date === date);
-          return <Day date={date} modules={modules} key={i} />;
-        })}
-      </div>
+      <>
+        {isLoading ? (
+          <div className="loading">Loading...</div>
+        ) : (
+          <div className="app">
+            {daysSet.map((date, i) => {
+              const modules = scheduleData.filter(
+                module => module.date === date
+              );
+              return <Day date={date} modules={modules} key={i} />;
+            })}
+          </div>
+        )}
+      </>
     );
   }
 }
